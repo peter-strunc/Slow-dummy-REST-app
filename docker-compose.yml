@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app1:
+    build: .
+    ports:
+      - "5002:5000"
+    environment:
+      - AVERAGE_WAIT_MS=200
+    container_name: flask_app_1
+
+  app2:
+    build: .
+    ports:
+      - "5003:5000"
+    environment:
+      - AVERAGE_WAIT_MS=500
+    container_name: flask_app_2
+
+  app3:
+    build: .
+    ports:
+      - "5004:5000"
+    environment:
+      - AVERAGE_WAIT_MS=1000
+    container_name: flask_app_3
